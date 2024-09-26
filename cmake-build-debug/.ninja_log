@@ -1,0 +1,11 @@
+# ninja log v6
+17	412	7490781721454214	CMakeFiles/HelloWorld.dir/main.c.obj	9874431adc5bd4c0
+413	615	7490781725406463	HelloWorld.exe	d468fc931fc32de0
+18	326	7490713487246910	CMakeFiles/HelloWorld.dir/ficf2.c.obj	5e217d175e59c80
+21	121	7490774896061383	CMakeFiles/HelloWorld.dir/test.c.obj	b7602f4fbf4eb8ae
+35	335	7490781214407639	CMakeFiles/HelloWorld.dir/player.c.obj	1d0b61a0a04c0f60
+47	242	7490781214517631	CMakeFiles/HelloWorld.dir/Board.c.obj	bbae4cd6c4021943
+31	296	7490793424744900	CMakeFiles/HelloWorld.dir/board.c.obj	436d59cd0cb1237e
+18	253	7490793815087382	CMakeFiles/HelloWorld.dir/main.c.obj	9874431adc5bd4c0
+31	258	7490793815207385	CMakeFiles/HelloWorld.dir/board.c.obj	436d59cd0cb1237e
+259	540	7490793817493454	HelloWorld.exe	c0516b3b43a19884
