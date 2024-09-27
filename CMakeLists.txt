@@ -9,4 +9,6 @@ add_executable(HelloWorld main.c
         test.c
         Board.c
         board.h
+        colors.h
+        colors.c
 )

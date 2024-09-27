@@ -9,5 +9,6 @@ typedef struct {
 } Player;
 
 Player *newPlayer(int id, char *color, char symbol);
+void freePlayer(Player *p);
 
 #endif //PLAYER_H

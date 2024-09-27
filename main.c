@@ -1,8 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "player.h"
 #include "board.h"
+#include "colors.h"
 
+
+char choose_symbol(int player_num, char* used_symbols) {
+    int valid = 0;
+    char simb;
+    while (!valid) {
+
+        printf("Joueur %d quel est votre symbole ? : ",player_num +1);
+        fflush(stdin); //pour eviter de récuperer un \n
+        scanf("%c",&simb); //pb avec \0
+        while(simb<33 || simb>126 || simb=='.') {
+            printf("Choisissez un autre symbole ! : ");
+            scanf("%c",&simb);
+        }
+
+        valid = 1;
+        for (int i = 0; i < player_num; i++) {
+            if (simb == used_symbols[i]) {
+                printf("Symbole déjà utilisé, choisissez-en un autre.\n");
+                valid = 0;
+                break;
+            }
+        }
+    }
+    used_symbols[player_num] = simb;
+    return simb;
+}
 
 int main() {
 
@@ -30,16 +58,12 @@ int main() {
     }
 
     Player **players = malloc(sizeof(Player*) * nb_players);
+    char *symbol_used = malloc(sizeof(char) * nb_players);
     for (int i = 0; i < nb_players; i++) {
-        char simb;
-        printf("Joueur %d quel est votre symbole ? : ",i+1);
-        fflush(stdin); //pour eviter de récuperer un \n
-        scanf("%c",&simb); //pb avec \0
-        while(simb<33 || simb>126 || simb=='.') {
-            printf("Choisissez un autre symbole ! : ");
-            scanf("%c",&simb);
-        }
-        players[i]=newPlayer(i,"\033[1;33m",simb);
+        char simb = choose_symbol(i,symbol_used);
+        char* color = malloc(sizeof(char) * 11);
+        choose_color(i,color);
+        players[i]=newPlayer(i,color,simb);
     }
 
     printf("Entrez le nombre de pions a aligner pour gagner (minimum 2) : ");

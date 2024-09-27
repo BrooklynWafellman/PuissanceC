@@ -73,6 +73,12 @@ build CMakeFiles/HelloWorld.dir/board.c.obj: C_COMPILER__HelloWorld_unscanned_De
   OBJECT_DIR = CMakeFiles\HelloWorld.dir
   OBJECT_FILE_DIR = CMakeFiles\HelloWorld.dir
 
+build CMakeFiles/HelloWorld.dir/colors.c.obj: C_COMPILER__HelloWorld_unscanned_Debug C$:/Users/brook/CLionProjects/HelloWorld/colors.c || cmake_object_order_depends_target_HelloWorld
+  DEP_FILE = CMakeFiles\HelloWorld.dir\colors.c.obj.d
+  FLAGS = -g -std=gnu99 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\HelloWorld.dir
+  OBJECT_FILE_DIR = CMakeFiles\HelloWorld.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target HelloWorld
@@ -81,7 +87,7 @@ build CMakeFiles/HelloWorld.dir/board.c.obj: C_COMPILER__HelloWorld_unscanned_De
 #############################################
 # Link the executable HelloWorld.exe
 
-build HelloWorld.exe: C_EXECUTABLE_LINKER__HelloWorld_Debug CMakeFiles/HelloWorld.dir/main.c.obj CMakeFiles/HelloWorld.dir/player.c.obj CMakeFiles/HelloWorld.dir/test.c.obj CMakeFiles/HelloWorld.dir/board.c.obj
+build HelloWorld.exe: C_EXECUTABLE_LINKER__HelloWorld_Debug CMakeFiles/HelloWorld.dir/main.c.obj CMakeFiles/HelloWorld.dir/player.c.obj CMakeFiles/HelloWorld.dir/test.c.obj CMakeFiles/HelloWorld.dir/board.c.obj CMakeFiles/HelloWorld.dir/colors.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\HelloWorld.dir

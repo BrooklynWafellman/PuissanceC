@@ -5,9 +5,9 @@
 #include "player.h"
 #include "board.h"
 
+#include "colors.h"
 #define PIECE_EMPTY '.'
-#define PIECE_YELLOW 'O'
-#define PIECE_RED 'X'
+
 
 
 Game* init_game(int grid_height, int grid_width, int win_condition, Player** player,int nb_players) {
@@ -44,7 +44,12 @@ void free_game(Game* game) {
 void print_grid(Game* game) {
     for (int i = 0; i < game->grid_height; i++) {
         for (int j = 0; j < game->grid_width; j++) {
-            printf("%c ", game->grid[i][j]);
+            for (int k = 0; k < game->nb_players; k++) {
+                if(game->grid[i][j] == game->player[k]->symbol) {
+                    printf("%s", game->player[k]->color);
+                }
+            }
+            printf("%c%s ", game->grid[i][j],COLOR_RESET);
         }
         printf("\n");
     }
