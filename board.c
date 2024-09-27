@@ -235,13 +235,13 @@ void game_loop(Game* game) {
     while (!won) {
         print_grid(game);
         int col;
-        printf("Joueur %d, choisissez la colonne (1-%d) : ", game->player_turn + 1, game->grid_width);
+        printf("%s, choisissez la colonne (1-%d) : ", game->player[game->player_turn]->name, game->grid_width);
         scanf("%d", &col);
         int winner = move_piece(game, col - 1);
         //int winner = check_win(game);
         if (winner >= game->win_condition) {
             print_grid(game);
-            printf("Joueur %d a gagne !\n", game->player[game->player_turn]->id+1);
+            printf("%s a gagne !\n", game->player[game->player_turn]->name);
             won = 1;
         }
         game->player_turn = (game->player_turn + 1)%game->nb_players;
